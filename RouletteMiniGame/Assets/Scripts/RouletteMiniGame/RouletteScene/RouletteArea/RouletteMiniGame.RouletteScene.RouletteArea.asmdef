@@ -1,0 +1,29 @@
+{
+    "name": "RouletteMiniGame.RouletteScene.RouletteArea",
+    "rootNamespace": "",
+    "references": [
+        "GUID:e3d8141278519461a906509d018b4081",
+        "GUID:0357083ec93ed429999f2e650a7fe78a",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:0cc3f166ce76f42faba9ee8fb33ec662",
+        "GUID:84651a3751eca9349aac36a66bba901b",
+        "GUID:b29796b62d946490d96238c5475a11df",
+        "GUID:0164398ea4b0d4033a72cb5f9934c305",
+        "GUID:75f64083537c94f08aa0a2dc7e13d990",
+        "GUID:0fe265997b7ea45e0a44e05fda2605e2",
+        "GUID:7b1da300d21de734abebc54d7456a52f",
+        "GUID:029c1c1b674aaae47a6841a0b89ad80e",
+        "GUID:b9c448d9f204d4296bc2a28556123e35",
+        "GUID:b97b445dec1e14c27801944482d852d6",
+        "GUID:00e7a41a3f4474c5e8fcab1a33417423"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

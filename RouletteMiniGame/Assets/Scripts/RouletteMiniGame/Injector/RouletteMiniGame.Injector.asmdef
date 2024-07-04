@@ -1,0 +1,21 @@
+{
+    "name": "RouletteMiniGame.Injector",
+    "rootNamespace": "",
+    "references": [
+        "GUID:75f64083537c94f08aa0a2dc7e13d990",
+        "GUID:6d6d17ffab69f4db590c5ee53ef0d8c8",
+        "GUID:0164398ea4b0d4033a72cb5f9934c305",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:b97b445dec1e14c27801944482d852d6",
+        "GUID:0cc3f166ce76f42faba9ee8fb33ec662"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

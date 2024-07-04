@@ -1,0 +1,16 @@
+{
+    "name": "Util.SceneNavigation",
+    "rootNamespace": "",
+    "references": [
+        "GUID:b97b445dec1e14c27801944482d852d6"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

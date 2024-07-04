@@ -1,0 +1,4 @@
+{
+	"name": "RouletteMiniGame.Domain",
+	"references":[ "GUID:0357083ec93ed429999f2e650a7fe78a" ]
+}

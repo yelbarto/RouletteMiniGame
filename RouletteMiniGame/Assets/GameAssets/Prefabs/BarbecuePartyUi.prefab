@@ -464,6 +464,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 477170348851089692, guid: 2c942f13a74ea42e496de0f1ec5213dd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4548054114573810214}
+    - targetCorrespondingSourceObject: {fileID: 8002775147760181708, guid: 2c942f13a74ea42e496de0f1ec5213dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9198707652001532627}
   m_SourcePrefab: {fileID: 100100000, guid: 2c942f13a74ea42e496de0f1ec5213dd, type: 3}
 --- !u!1 &740492057373389922 stripped
 GameObject:
@@ -536,6 +539,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 401f696d0f9834f7bbc3521ce5747c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &7194060486419317938 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8002775147760181708, guid: 2c942f13a74ea42e496de0f1ec5213dd, type: 3}
+  m_PrefabInstance: {fileID: 926051011798459774}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &9198707652001532627
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7194060486419317938}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 1
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &8669692670756183475 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8397262711055562957, guid: 2c942f13a74ea42e496de0f1ec5213dd, type: 3}
