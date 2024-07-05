@@ -108,8 +108,8 @@ namespace RouletteMiniGame.RouletteScene.RouletteArea
             var item = _rouletteItems[itemIndex];
             await item.CollectItemAsync();
             _walletRepository.AddInventory(item.GetInventoryType(), 1);
-            await PlayAfterCollectionAnimationAsync();
             await ShowWinUi(item.GetSprite());
+            await PlayAfterCollectionAnimationAsync();
         }
 
         private async UniTask ShowWinUi(Sprite sprite)

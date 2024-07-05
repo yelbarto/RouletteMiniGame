@@ -69,9 +69,9 @@ namespace RouletteMiniGame.RouletteScene.RouletteArea
             _highlightCts = new CancellationTokenSource();
             var previousState = _itemModel.State.Type;
             await _itemModel.ChangeState(RouletteItemStateFactory.Create(RouletteItemState.Highlighted, _rouletteItemView),
-                _lifetimeCts.Token);
+                _highlightCts.Token);
             await _itemModel.ChangeState(RouletteItemStateFactory.Create(previousState, _rouletteItemView),
-                _lifetimeCts.Token);
+                _highlightCts.Token);
         }
 
         public async UniTask SelectItemAsync()
