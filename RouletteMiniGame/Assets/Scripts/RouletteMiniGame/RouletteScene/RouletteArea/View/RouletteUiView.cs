@@ -1,12 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
-using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using Util.UI;
 
-namespace RouletteMiniGame.RouletteScene.RouletteArea
+namespace RouletteMiniGame.RouletteScene.RouletteArea.View
 {
     public abstract class RouletteUiView : MonoBehaviour
     {

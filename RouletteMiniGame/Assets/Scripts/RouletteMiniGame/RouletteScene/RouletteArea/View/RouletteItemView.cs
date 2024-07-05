@@ -1,13 +1,11 @@
-using System;
 using System.Threading;
 using com.cyborgAssets.inspectorButtonPro;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
-using RouletteMiniGame.RouletteScene.RouletteArea.RouletteItemStates;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace RouletteMiniGame.RouletteScene.RouletteArea
+namespace RouletteMiniGame.RouletteScene.RouletteArea.View
 {
     public class RouletteItemView : MonoBehaviour
     {
@@ -51,34 +49,14 @@ namespace RouletteMiniGame.RouletteScene.RouletteArea
             defaultBackground.SetActive(true);
         }
 
-        public async UniTask OnStateChanged(RouletteItemState state, CancellationToken token)
-        {
-            switch (state)
-            {
-                case RouletteItemState.Idle:
-                    break;
-                case RouletteItemState.Highlighted:
-                    await HighlightAsync(token);
-                    break;
-                case RouletteItemState.Selected:
-                    await SelectAsync(token);
-                    break;
-                case RouletteItemState.Collected:
-                    await CollectAsync(token);
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(state), state, null);
-            }
-        }
-
-        private async UniTask HighlightAsync(CancellationToken token)
+        public async UniTask HighlightAsync(CancellationToken token)
         {
             shineImage.DOFade(1, 0).ToUniTask(cancellationToken: token).Forget();
             await shineImage.DOFade(0, alphaDuration).SetEase(alphaEase)
                 .ToUniTask(TweenCancelBehaviour.KillAndCancelAwait, token);
         }
 
-        private async UniTask SelectAsync(CancellationToken token)
+        public async UniTask SelectAsync(CancellationToken token)
         {
             await shineImage.DOFade(1, shineDuration).SetEase(shineEase)
                 .SetLoops(shineLoopCount, LoopType.Yoyo)
@@ -89,7 +67,7 @@ namespace RouletteMiniGame.RouletteScene.RouletteArea
                 .ToUniTask(TweenCancelBehaviour.KillAndCancelAwait, token);
         }
 
-        private async UniTask CollectAsync(CancellationToken token)
+        public async UniTask CollectAsync(CancellationToken token)
         {
             collectedBackground.SetActive(true);
             await itemImage.transform.DOJump(_jumpTarget, jumpPower, 1, jumpDuration)

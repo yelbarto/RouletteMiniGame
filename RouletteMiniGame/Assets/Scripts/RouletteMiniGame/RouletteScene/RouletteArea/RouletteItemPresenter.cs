@@ -1,7 +1,9 @@
 using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using RouletteMiniGame.RouletteScene.Data;
 using RouletteMiniGame.RouletteScene.RouletteArea.RouletteItemStates;
+using RouletteMiniGame.RouletteScene.RouletteArea.View;
 using UnityEngine;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.U2D;
@@ -11,7 +13,6 @@ namespace RouletteMiniGame.RouletteScene.RouletteArea
 {
     public class RouletteItemPresenter : IDisposable
     {
-        private readonly RouletteItemStateFactory _itemStateFactory;
         private readonly AddressablesFacade _addressablesFacade;
         private readonly CancellationTokenSource _lifetimeCts;
         private readonly RouletteItemView _rouletteItemView;
@@ -21,11 +22,10 @@ namespace RouletteMiniGame.RouletteScene.RouletteArea
         private CancellationTokenSource _highlightCts;
 
         public RouletteItemPresenter(AddressablesFacade addressablesFacade, InventoryType type, int index,
-            RouletteItemView rouletteItemView, RouletteItemStateFactory itemStateFactory, Vector3 jumpTarget)
+            RouletteItemView rouletteItemView, Vector3 jumpTarget)
         {
             _addressablesFacade = addressablesFacade;
             _rouletteItemView = rouletteItemView;
-            _itemStateFactory = itemStateFactory;
 
             _itemModel = new RouletteItemModel(type, index);
             _lifetimeCts = new CancellationTokenSource();
@@ -46,9 +46,11 @@ namespace RouletteMiniGame.RouletteScene.RouletteArea
         {
             return _itemModel.Sprite;
         }
-        
+
         private async UniTask SetUpViewAsync(InventoryType inventoryType, Vector3 jumpTarget)
         {
+            await _itemModel.ChangeState(RouletteItemStateFactory.Create(RouletteItemState.Idle, _rouletteItemView),
+                _lifetimeCts.Token);
             var inventoryData = InventoryDataProvider.Instance.GetInventoryStaticData(inventoryType);
             var task = await _addressablesFacade
                 .LoadAssetAsync<SpriteAtlas>(inventoryData.AtlasName, _lifetimeCts.Token);
@@ -66,27 +68,27 @@ namespace RouletteMiniGame.RouletteScene.RouletteArea
             _highlightCts?.Cancel();
             _highlightCts = new CancellationTokenSource();
             var previousState = _itemModel.State.Type;
-            _itemModel.ChangeState(_itemStateFactory.Create(RouletteItemState.Highlighted));
-            await _rouletteItemView.OnStateChanged(_itemModel.State.Type, _highlightCts.Token);
-            _itemModel.ChangeState(_itemStateFactory.Create(previousState));
+            await _itemModel.ChangeState(RouletteItemStateFactory.Create(RouletteItemState.Highlighted, _rouletteItemView),
+                _lifetimeCts.Token);
+            await _itemModel.ChangeState(RouletteItemStateFactory.Create(previousState, _rouletteItemView),
+                _lifetimeCts.Token);
         }
 
         public async UniTask SelectItemAsync()
         {
             _highlightCts?.Cancel();
-            _itemModel.ChangeState(_itemStateFactory.Create(RouletteItemState.Selected));
-            await _rouletteItemView.OnStateChanged(_itemModel.State.Type, _lifetimeCts.Token);
-            _itemModel.ChangeState(_itemStateFactory.Create(RouletteItemState.Idle));
+            await _itemModel.ChangeState(RouletteItemStateFactory.Create(RouletteItemState.Selected, _rouletteItemView),
+                _lifetimeCts.Token);
         }
 
         public async UniTask CollectItemAsync()
         {
-            _itemModel.ChangeState(_itemStateFactory.Create(RouletteItemState.Collected));
-            await _rouletteItemView.OnStateChanged(_itemModel.State.Type, _lifetimeCts.Token);
+            await _itemModel.ChangeState(RouletteItemStateFactory.Create(RouletteItemState.Collected, _rouletteItemView),
+                _lifetimeCts.Token);
         }
 
         #endregion
-        
+
         public void Dispose()
         {
             _highlightCts?.Cancel();

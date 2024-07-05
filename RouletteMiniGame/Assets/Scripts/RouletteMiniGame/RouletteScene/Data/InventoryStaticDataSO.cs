@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RouletteMiniGame.RouletteScene
+namespace RouletteMiniGame.RouletteScene.Data
 {
     [CreateAssetMenu(fileName = "InventoryData", menuName = "RouletteGame/InventoryData")]
     public class InventoryStaticDataSO : ScriptableObject

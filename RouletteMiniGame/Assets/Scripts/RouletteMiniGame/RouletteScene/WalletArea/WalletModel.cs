@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using RouletteMiniGame.RouletteScene.Data;
 
 namespace RouletteMiniGame.RouletteScene.WalletArea
 {

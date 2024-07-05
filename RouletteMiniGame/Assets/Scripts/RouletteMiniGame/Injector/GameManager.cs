@@ -2,6 +2,7 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using RouletteMiniGame.Domain;
 using RouletteMiniGame.RouletteScene.RouletteArea;
+using RouletteMiniGame.RouletteScene.RouletteArea.View;
 using RouletteMiniGame.RouletteScene.WalletArea;
 using UnityEngine;
 using Util;

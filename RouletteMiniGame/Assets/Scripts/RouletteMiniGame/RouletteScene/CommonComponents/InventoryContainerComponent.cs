@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace RouletteMiniGame.RouletteScene.WalletArea
+namespace RouletteMiniGame.RouletteScene.CommonComponents
 {
     public class InventoryContainerComponent : MonoBehaviour
     {

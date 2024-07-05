@@ -1,17 +1,18 @@
 using System;
+using RouletteMiniGame.RouletteScene.RouletteArea.View;
 
 namespace RouletteMiniGame.RouletteScene.RouletteArea.RouletteItemStates
 {
-    public class RouletteItemStateFactory
+    public static class RouletteItemStateFactory
     {
-        public RouletteItemStateBase Create(RouletteItemState state)
+        public static RouletteItemStateBase Create(RouletteItemState state, RouletteItemView itemView)
         {
             return state switch
             {
-                RouletteItemState.Idle => new IdleState(),
-                RouletteItemState.Highlighted => new HighlightedState(),
-                RouletteItemState.Selected => new SelectedState(),
-                RouletteItemState.Collected => new CollectedState(),
+                RouletteItemState.Idle => new IdleState(itemView),
+                RouletteItemState.Highlighted => new HighlightedState(itemView),
+                RouletteItemState.Selected => new SelectedState(itemView),
+                RouletteItemState.Collected => new CollectedState(itemView),
                 _ => throw new ArgumentOutOfRangeException(nameof(state), state, null)
             };
         }

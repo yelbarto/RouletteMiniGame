@@ -1,9 +1,8 @@
-using System;
 using System.Linq;
 using UnityEngine;
 using Util;
 
-namespace RouletteMiniGame.RouletteScene
+namespace RouletteMiniGame.RouletteScene.Data
 {
     public class InventoryDataProvider : MonoSingleton<InventoryDataProvider>
     {

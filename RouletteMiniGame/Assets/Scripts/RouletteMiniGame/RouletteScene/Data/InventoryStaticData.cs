@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace RouletteMiniGame.RouletteScene
+namespace RouletteMiniGame.RouletteScene.Data
 {
     [Serializable]
     public class InventoryStaticData

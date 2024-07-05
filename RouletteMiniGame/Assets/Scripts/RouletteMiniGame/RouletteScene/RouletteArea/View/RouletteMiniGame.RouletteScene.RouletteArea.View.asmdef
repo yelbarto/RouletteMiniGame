@@ -1,14 +1,14 @@
 {
-    "name": "RouletteMiniGame.Injector",
+    "name": "RouletteMiniGame.RouletteScene.RouletteArea.View",
     "rootNamespace": "",
     "references": [
-        "GUID:75f64083537c94f08aa0a2dc7e13d990",
-        "GUID:6d6d17ffab69f4db590c5ee53ef0d8c8",
-        "GUID:0164398ea4b0d4033a72cb5f9934c305",
+        "GUID:b29796b62d946490d96238c5475a11df",
         "GUID:f51ebe6a0ceec4240a699833d6309b23",
-        "GUID:b97b445dec1e14c27801944482d852d6",
-        "GUID:0cc3f166ce76f42faba9ee8fb33ec662",
-        "GUID:9958d99888c594cffaa4d68f67b9d334"
+        "GUID:0fe265997b7ea45e0a44e05fda2605e2",
+        "GUID:029c1c1b674aaae47a6841a0b89ad80e",
+        "GUID:7b1da300d21de734abebc54d7456a52f",
+        "GUID:00e7a41a3f4474c5e8fcab1a33417423",
+        "GUID:b97b445dec1e14c27801944482d852d6"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

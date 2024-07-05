@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using RouletteMiniGame.Domain;
-using RouletteMiniGame.RouletteScene.RouletteArea.RouletteItemStates;
+using RouletteMiniGame.RouletteScene.RouletteArea.View;
 using RouletteMiniGame.RouletteScene.WalletArea;
 using UnityEngine;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -24,7 +24,6 @@ namespace RouletteMiniGame.RouletteScene.RouletteArea
         private readonly WinView _winView;
 
         private readonly List<RouletteItemPresenter> _rouletteItems = new ();
-        private readonly RouletteItemStateFactory _stateFactory;
         private readonly Spinner _spinner;
 
         private AsyncOperationHandle<GameObject> _rouletteUiLoadTask;
@@ -40,7 +39,6 @@ namespace RouletteMiniGame.RouletteScene.RouletteArea
             _walletPresenter = walletPresenter;
             _winView = winView;
             
-            _stateFactory = new RouletteItemStateFactory();
             _lifetimeCts = new CancellationTokenSource();
             _spinner = new Spinner();
             SceneNavigator.Instance.RegisterToSceneChange(OnSceneChanged, SceneType.Roulette);
@@ -66,7 +64,7 @@ namespace RouletteMiniGame.RouletteScene.RouletteArea
             foreach (var inventoryType in orderedInventories)
             {
                 _rouletteItems.Add(new RouletteItemPresenter(_addressablesFacade, inventoryType, counter,
-                    _rouletteUiView.RouletteItems[counter], _stateFactory, _rouletteUiView.JumpTargetPosition));
+                    _rouletteUiView.RouletteItems[counter], _rouletteUiView.JumpTargetPosition));
                 counter++;
             }
         }

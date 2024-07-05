@@ -1,3 +1,5 @@
+using RouletteMiniGame.RouletteScene.RouletteArea.View;
+
 namespace RouletteMiniGame.RouletteScene.RouletteArea.BarbecueParty
 {
     public class BarbecuePartyUiView : RouletteUiView

@@ -3,11 +3,10 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.ResourceManagement.AsyncOperations;
-using Util.Addressables.Runtime.Abstraction;
 
 namespace Util.Addressables.Runtime
 {
-    public class AddressablesFacade : IAddressablesFacade
+    public class AddressablesFacade
     {
         public async UniTask InitializeAddressablesAsync(CancellationToken token)
         {

@@ -1,9 +1,9 @@
-using RouletteMiniGame.RouletteScene.WalletArea;
+using RouletteMiniGame.RouletteScene.CommonComponents;
 using UnityEngine;
 using UnityEngine.UI;
 using Util.UI;
 
-namespace RouletteMiniGame.RouletteScene.RouletteArea
+namespace RouletteMiniGame.RouletteScene.RouletteArea.View
 {
     public class WinView : MonoBehaviour
     {

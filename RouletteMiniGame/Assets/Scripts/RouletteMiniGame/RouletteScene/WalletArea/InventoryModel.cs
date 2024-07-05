@@ -1,3 +1,4 @@
+using RouletteMiniGame.RouletteScene.Data;
 using UnityEngine;
 
 namespace RouletteMiniGame.RouletteScene.WalletArea

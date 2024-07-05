@@ -2,7 +2,8 @@
     "name": "RouletteMiniGame.RouletteScene.RouletteArea.BarbecueParty",
     "rootNamespace": "",
     "references": [
-        "GUID:6d6d17ffab69f4db590c5ee53ef0d8c8"
+        "GUID:6d6d17ffab69f4db590c5ee53ef0d8c8",
+        "GUID:9958d99888c594cffaa4d68f67b9d334"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
